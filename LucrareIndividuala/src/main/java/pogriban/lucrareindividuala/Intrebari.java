@@ -9,12 +9,14 @@
  * @author ThinkPad
  */
 public class Intrebari {
+    private int id;
     private String intrebare;
     private String raspuns1;
     private String raspuns2;
     private String raspuns3;
     private String raspuns4;
-    public Intrebari(String intrebare, String raspuns1, String raspuns2, String raspuns3, String raspuns4){
+    public Intrebari(int id, String intrebare, String raspuns1, String raspuns2, String raspuns3, String raspuns4){
+    this.id=id;
     this.intrebare=intrebare;
     this.raspuns1=raspuns1;
     this.raspuns2=raspuns2;
@@ -22,11 +24,14 @@ public class Intrebari {
     this.raspuns4=raspuns4;
     }
 
-   
-    //public String printIntrebari() { 
-      // return String.format(intrebare + " " + raspuns1+ " " + raspuns2 + " " + raspuns3 + " "+raspuns4 );
-    
-//}
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getIntrebare() {
         return intrebare;
