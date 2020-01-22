@@ -6,59 +6,128 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.Scanner;
+import pogriban.lucrareindividuala.Raspuns;
 
 /**
  *
  * @author ThinkPad
  */
 public class Milioner {
+static Random random = new Random();
+    static Intrebari i1 = new Intrebari(1, "Ce insecta a scurtcircuitat unul dintre primele computere și a inspirat termenul de bug\n", "A Molie ", "B Gindac de bucatarie ", "C Musca ", "D Gandac japonez", "A");//corect Molie
+    static Intrebari i2 = new Intrebari(2, "Care dintre urmatorii oameni de stiinta nu are un element chimic care sa-i poarte numele?\n", "A Albert Einstein ", "B Niels Bohr ", "C Isaac Newton ", "D Enrico Fermi", "C");//corect Niels Bohr
+    static Intrebari i3 = new Intrebari(3, "Care este capitala Republicii Moldova?'\n", "A Chisinau ", "B Balti ", "C Paris ", "D Tokyo", "A");//corect Chisinau
+    static Intrebari i4 = new Intrebari(4, "Care dintre urmatoarele tari este complet inconjurata de o alta?\n", "A Burkina Faso ", "B Mongolia ", "C Lesotho ", "D Luxemburg", "C");//corect Lesotho
+    static Intrebari i5 = new Intrebari(5, "Sub ce nume a ramas cunoscut eroul national al Spaniei, Rodrigo Díaz de Bivar?'\n", "A El Cano ", "B El Greco ", "C El Cid ", "D El Salvador", "C");//corect El Cid
+    static Intrebari i6 = new Intrebari(6, "Daca ai fi Albert King, care ar fi profesia ta?'\n", "A Scriitor ", "B Jurnalist de televiziune ", "C Pilot de Formula 1 ", "D Muzician", "D");//corect Muzician
+    static Intrebari i7 = new Intrebari(7, "In ce oras s-a nascut celebrul bluesman Alexis Korner?'\n", "A Londra ", "B New York ", "C Budapesta ", "D Paris", "D");//corect Paris
 
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
+
+        System.out.println();
         System.out.print("Introduceti numele: ");
         String name = sc.nextLine();
         System.out.println();
-        for(;;){
-            
-        main1();
-        
-        System.out.println("Doriti sa mai incecati: Y/N ");
-        
-        while(sc.nextLine().toLowerCase().charAt(0) == 'Y' || sc.nextLine().charAt(0) == 'y') {
-            main1();
-        }  //char exit = sc.next().charAt(0);
-        
-            if((sc.nextLine().toLowerCase().charAt(0) == 'N' || sc.nextLine().charAt(0) == 'n'))break;{
+        for (;;) {
+            //main1();
+            System.out.println("Doriti sa mai incecati: Y/N ");
+            char yesOrNot = sc.next().charAt(0);
+            if (yesOrNot == 'Y' || yesOrNot == 'y') {
+                main1();
+            }
+            if (yesOrNot == 'N' || yesOrNot == 'n') {
+                break;
+            }
+
+        }
+        {
             System.out.println("La revedere ");
-        }}////
+        }
+
     }
 
     public static void main1() {
+        Random random = new Random();
+        
         Scanner sc = new Scanner(System.in);
         int count = 0;
-
-        Intrebari i1 = new Intrebari(1, "Ce insecta a scurtcircuitat unul dintre primele computere și a inspirat termenul de bug\n", "A Molie ", "B Gindac de bucatarie ", "C Musca ", "D Gandac japonez");//corect Molie
-        Intrebari i2 = new Intrebari(2, "Care dintre urmatorii oameni de stiinta nu are un element chimic care sa-i poarte numele?\n", "A Albert Einstein ", "B Niels Bohr ", "C Isaac Newton ", "D Enrico Fermi");//corect Niels Bohr
-        Intrebari i3 = new Intrebari(3, "Care este capitala Republicii Moldova?'\n", "A Chisinau ", "B Balti ", "C Paris ", "D Tokyo");//corect Chisinau
-        Intrebari i4 = new Intrebari(4, "Care dintre urmatoarele tari este complet inconjurata de o alta?\n", "A Burkina Faso ", "B Mongolia ", "C Lesotho ", "D Luxemburg");//corect Lesotho
-        Intrebari i5 = new Intrebari(5, "Sub ce nume a ramas cunoscut eroul national al Spaniei, Rodrigo Díaz de Bivar?'\n", "A El Cano ", "B El Greco ", "C El Cid ", "D El Salvador");//corect El Cid
-        Intrebari i6 = new Intrebari(6, "Daca ai fi Albert King, care ar fi profesia ta?'\n", "A Scriitor ", "B Jurnalist de televiziune ", "C Pilot de Formula 1 ", "D Muzician");//corect Muzician
-        Intrebari i7 = new Intrebari(7, "In ce oras s-a nascut celebrul bluesman Alexis Korner?'\n", "A Londra ", "B New York ", "C Budapesta ", "D Paris");//corect Paris
-
+        ArrayList<Intrebari> arL = new ArrayList<Intrebari>();
+        //  Intrebari i1 = new Intrebari(1, "Ce insecta a scurtcircuitat unul dintre primele computere și a inspirat termenul de bug\n", "A Molie ", "B Gindac de bucatarie ", "C Musca ", "D Gandac japonez", "A");//corect Molie
+        //Intrebari i2 = new Intrebari(2, "Care dintre urmatorii oameni de stiinta nu are un element chimic care sa-i poarte numele?\n", "A Albert Einstein ", "B Niels Bohr ", "C Isaac Newton ", "D Enrico Fermi", "C");//corect Niels Bohr
+        //Intrebari i3 = new Intrebari(3, "Care este capitala Republicii Moldova?'\n", "A Chisinau ", "B Balti ", "C Paris ", "D Tokyo", "A");//corect Chisinau
+        //Intrebari i4 = new Intrebari(4, "Care dintre urmatoarele tari este complet inconjurata de o alta?\n", "A Burkina Faso ", "B Mongolia ", "C Lesotho ", "D Luxemburg", "C");//corect Lesotho
+        //Intrebari i5 = new Intrebari(5, "Sub ce nume a ramas cunoscut eroul national al Spaniei, Rodrigo Díaz de Bivar?'\n", "A El Cano ", "B El Greco ", "C El Cid ", "D El Salvador", "C");//corect El Cid
+        //Intrebari i6 = new Intrebari(6, "Daca ai fi Albert King, care ar fi profesia ta?'\n", "A Scriitor ", "B Jurnalist de televiziune ", "C Pilot de Formula 1 ", "D Muzician", "D");//corect Muzician
+        //Intrebari i7 = new Intrebari(7, "In ce oras s-a nascut celebrul bluesman Alexis Korner?'\n", "A Londra ", "B New York ", "C Budapesta ", "D Paris", "D");//corect Paris
+        arL.add(i1);
+        arL.add(i2);
+        arL.add(i3);
+        arL.add(i4);
+        arL.add(i5);
+        arL.add(i6);
+        arL.add(i7);
+       
+       
+        a50_50(i1);
         for (int i = 0; i < 7; i++) {
-            afisIntrebare1(i1);
+            if (afisIntrebare(i1)) ; else {
+                System.out.println("Imi pare rau aici punem punct cu " + count);
+                break;
+            }
+            count += 5;
+            System.out.println(" aveti " + count + " $");
+            if (afisIntrebare(i2)); else {
+                System.out.println("Imi pare rau aici punem punct cu " + count);
+                break;
+            }
+            count += 5;
+            System.out.println(" aveti " + count + " $");
+            if (afisIntrebare(i3)); else {
+                System.out.println("Imi pare rau aici punem punct cu " + count);
+                break;
+            }
+            count += 5;
+            System.out.println(" aveti " + count + " $");
+            if (afisIntrebare(i4)); else {
+                System.out.println("Imi pare rau aici punem punct cu " + count);
+                break;
+            }
+            count += 5;
+            System.out.println(" aveti " + count + " $");
+            if (afisIntrebare(i5)); else {
+                System.out.println("Imi pare rau aici punem punct cu " + count);
+                break;
+            }
+            count += 5;
+            System.out.println(" aveti " + count + " $");
+            if (afisIntrebare(i6)); else {
+                System.out.println("Imi pare rau aici punem punct cu " + count);
+                break;
+            }
+            count += 5;
+            System.out.println(" aveti " + count + " $");
+            if (afisIntrebare(i7)); else {
+                System.out.println("Imi pare rau aici punem punct cu " + count);
+                break;
+            }
+            count += 5;
+            System.out.println(" aveti " + count + " $");
+        }
+        /* afisIntrebare(i1);
             System.out.println("Astept raspuns: ");
             char in = sc.next().charAt(0);
-            if (in == i1.getRaspuns1().toLowerCase().charAt(0) || in == i1.getRaspuns1().toUpperCase().charAt(0)) {
+            if (in == i1.getRasCorect().toLowerCase().charAt(0) || in == i1.getRasCorect().toUpperCase().charAt(0)) {
                 System.out.println("Corect ");
                 count += 5;
             } else {
                 System.out.println("Imi pare rau aici punem punct cu " + count + " $");
                 break;
             }
-            afisIntrebare1(i2);
+            afisIntrebare(i2);
             char in1 = sc.next().charAt(0);
             if (in1 == i1.getRaspuns3().toLowerCase().charAt(0)) {
                 System.out.println("Corect ");
@@ -67,68 +136,108 @@ public class Milioner {
                 System.out.println("Imi pare rau aici punem punct cu " + count + " $");
                 break;
             }
-            afisIntrebare1(i3);
+            afisIntrebare(i3);
             char in3 = sc.next().charAt(0);
-            if (in3 == i1.getRaspuns1().toLowerCase().charAt(0)) {
+            if (in3 == i1.getRasCorect().toLowerCase().charAt(0)) {
                 System.out.println("Corect ");
                 count += 5;
             } else {
                 System.out.println("Imi pare rau aici punem punct cu " + count + " $");
                 break;
             }
-            afisIntrebare1(i4);
+            afisIntrebare(i4);
             char in4 = sc.next().charAt(0);
-            if (in4 == i1.getRaspuns1().toLowerCase().charAt(0)) {
+            if (in4 == i1.getRasCorect().toLowerCase().charAt(0)) {
                 System.out.println("Corect ");
                 count += 5;
             } else {
                 System.out.println("Imi pare rau aici punem punct cu " + count + " $");
                 break;
             }
-            afisIntrebare1(i5);
+            afisIntrebare(i5);
             char in5 = sc.next().charAt(0);
-            if (in5 == i5.getRaspuns1().toLowerCase().charAt(0)) {
+            if (in5 == i5.getRasCorect().toLowerCase().charAt(0)) {
                 System.out.println("Corect ");
                 count += 5;
             } else {
                 System.out.println("Imi pare rau aici punem punct cu " + count + " $");
                 break;
             }
-            afisIntrebare1(i6);
+            afisIntrebare(i6);
             char in6 = sc.next().charAt(0);
-            if (in6 == i1.getRaspuns1().toLowerCase().charAt(0)) {
+            if (in6 == i1.getRasCorect().toLowerCase().charAt(0)) {
                 System.out.println("Corect ");
                 count += 5;
             } else {
                 System.out.println("Imi pare rau aici punem punct cu " + count + " $");
                 break;
             }
-            afisIntrebare1(i7);
+            afisIntrebare(i7);
             char in7 = sc.next().charAt(0);
-            if (in7 == i1.getRaspuns1().toLowerCase().charAt(0)) {
+            if (in7 == i1.getRasCorect().toLowerCase().charAt(0)) {
                 System.out.println("Corect ");
                 count += 5;
             } else {
                 System.out.println("Imi pare rau aici punem punct cu " + count + " $");
                 break;
             }
+        }*/
+
+    }
+
+    public static boolean afisIntrebare(Intrebari a) {
+        boolean m;
+
+        System.out.println(a.getId() + " " + a.getIntrebare() + a.getRasCorect() + a.getRaspuns2() + a.getRaspuns3() + a.getRaspuns4());
+        char intrCorec = sc.next().charAt(0);
+        if (intrCorec == a.getCorect().toLowerCase().charAt(0) || intrCorec == a.getCorect().toUpperCase().charAt(0)) {
+            System.out.println("Corect ");
+            m = true;
+        } else {
+            m = false;
+        }
+        return m;
+    }
+
+    public static void a50_50(Intrebari a) {
+       
+
+        //System.out.println(a.getId() + " "  + (a.getRasCorect()) + a.getRaspuns2() + a.getRaspuns3() + a.getRaspuns4());
+        //char intrCorec = sc.next().charAt(0);
+        if (  a.getCorect().charAt(0)==a.getRasCorect().charAt(0)) {
+            System.out.println(a.getId() + " " +  a.getRasCorect() +  a.getRaspuns4());
+        }
+            if (  a.getCorect().charAt(0)==a.getRaspuns2().charAt(0)) {
+            System.out.println(a.getId() + " "+  a.getRaspuns2() +  a.getRaspuns4() );
+        }
+        if (  a.getCorect().charAt(0)==a.getRaspuns3().charAt(0)) {
+            System.out.println(a.getId() + " "+  a.getRaspuns3() +  a.getRasCorect() );
+        }
+        if (  a.getCorect().charAt(0)==a.getRaspuns4().charAt(0)) {
+            System.out.println(a.getId() + " "+  a.getRaspuns3() +  a.getRaspuns4() );
         }
 
     }
-
-    //public static void afisIntrebare(ArrayList<Intrebari> list) {
-    //for (Intrebari elem : list) {
-    //     System.out.println(elem.getIntrebare() + elem.getRaspuns1() + elem.getRaspuns2() + elem.getRaspuns3() + elem.getRaspuns4());
-    //}
-    //}
-    public static void afisIntrebare1(Intrebari i1) {
-        System.out.println(i1.getIntrebare() + i1.getRaspuns1() + i1.getRaspuns2() + i1.getRaspuns3() + i1.getRaspuns4());
-
-    }
-
-    public static void afisDoarIntrebare(Intrebari i1) {
-
-        System.out.println(i1.getIntrebare());
+    public static void phoneFriend(Intrebari a) {
+       
+        int f=100-random.nextInt(45);
+        int f1=f-random.nextInt(34);
+        int f2=f1-random.nextInt(21);
+        int f3=f2-random.nextInt(11);
+        //System.out.println(a.getId() + " "  + (a.getRasCorect()) + a.getRaspuns2() + a.getRaspuns3() + a.getRaspuns4());
+        //char intrCorec = sc.next().charAt(0);
+        if (  a.getCorect().charAt(0)==a.getRasCorect().charAt(0)) {
+            System.out.println(" " + a.getRasCorect()+(Math.random()*95) + a.getRaspuns2()+(random.nextInt(78)) + a.getRaspuns3()+(Math.random()*77) + a.getRaspuns4()+(Math.random()*23));
+        }
+            if (  a.getCorect().charAt(0)==a.getRaspuns2().charAt(0)) {
+            System.out.println(a.getId() + " "+  a.getRaspuns2() +  a.getRaspuns4() );
+        }
+        if (  a.getCorect().charAt(0)==a.getRaspuns3().charAt(0)) {
+            System.out.println(a.getId() + " "+  a.getRaspuns3() +  a.getRasCorect() );
+        }
+        if (  a.getCorect().charAt(0)==a.getRaspuns4().charAt(0)) {
+            System.out.println(a.getId() + " "+  a.getRaspuns3() +  a.getRaspuns4() );
+        }
 
     }
 }

@@ -9,21 +9,19 @@
  * @author ThinkPad
  */
 public class Intrebari {
-    protected int id;
+    private int id;
     private String intrebare;
     private String raspuns1;
     private String raspuns2;
     private String raspuns3;
     private String raspuns4;
-    private String corect;
-    public Intrebari(int id, String intrebare, String raspuns1, String raspuns2, String raspuns3, String raspuns4, String corect){
+    public Intrebari(int id, String intrebare, String raspuns1, String raspuns2, String raspuns3, String raspuns4){
     this.id=id;
     this.intrebare=intrebare;
     this.raspuns1=raspuns1;
     this.raspuns2=raspuns2;
     this.raspuns3=raspuns3;
     this.raspuns4=raspuns4;
-    this.corect=corect;
     }
 
     public int getId() {
@@ -43,11 +41,11 @@ public class Intrebari {
         this.intrebare = intrebare;
     }
 
-    public String getRasCorect() {
+    public String getRaspuns1() {
         return raspuns1;
     }
 
-    public void setRasCorect(String raspuns1) {
+    public void setRaspuns1(String raspuns1) {
         this.raspuns1 = raspuns1;
     }
 
@@ -74,14 +72,4 @@ public class Intrebari {
     public void setRaspuns4(String raspuns4) {
         this.raspuns4 = raspuns4;
     }
-
-    public String getCorect() {
-        return corect;
-    }
-
-    public void setCorect(String corect) {
-        this.corect = corect;
-    }
- 
- 
 }
