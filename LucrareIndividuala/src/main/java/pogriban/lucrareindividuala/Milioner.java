@@ -131,21 +131,21 @@ System.out.println("rand= "+(rand1+rand2)/2);
         //System.out.println(a.getId() + " "  + (a.getRasCorect()) + a.getRaspuns2() + a.getRaspuns3() + a.getRaspuns4());
         //char intrCorec = sc.next().charAt(0);
         if (a.getCorect().charAt(0) == a.getRasCorect().charAt(0)) {
-            System.out.println(a.getId() + " " + a.getRasCorect() + a.getRaspuns4());
+            System.out.println(a.getId() + " " + a.getRasCorect() + a.getRaspuns3());
         }
         if (a.getCorect().charAt(0) == a.getRaspuns2().charAt(0)) {
             System.out.println(a.getId() + " " + a.getRaspuns2() + a.getRaspuns4());
         }
         if (a.getCorect().charAt(0) == a.getRaspuns3().charAt(0)) {
-            System.out.println(a.getId() + " " + a.getRaspuns3() + a.getRasCorect());
+            System.out.println(a.getId() + " " + a.getRasCorect() + a.getRaspuns3());
         }
         if (a.getCorect().charAt(0) == a.getRaspuns4().charAt(0)) {
-            System.out.println(a.getId() + " " + a.getRaspuns3() + a.getRaspuns4());
+            System.out.println(a.getId() + " " + a.getRasCorect() + a.getRaspuns4());
         }
 
     }
 
-    public static void phoneFriend(Intrebari a) {
+    public static void help(Intrebari a) {
 
         int f = 100 - random.nextInt(45);
         int f1 = f - random.nextInt(34);
@@ -164,6 +164,23 @@ System.out.println("rand= "+(rand1+rand2)/2);
         }
         if (a.getCorect().charAt(0) == a.getRaspuns4().charAt(0)) {
             System.out.println(a.getId() + " " + a.getRaspuns3() + a.getRaspuns4());
+        }
+
+    }
+    public static void phoneFriend(Intrebari a) {
+
+        
+        if (a.getCorect().charAt(0) == a.getRasCorect().charAt(0)) {
+            System.out.println(" " + a.getRasCorect());
+        }
+        if (a.getCorect().charAt(0) == a.getRaspuns2().charAt(0)) {
+            System.out.println(a.getId() + " " + a.getRaspuns2() );
+        }
+        if (a.getCorect().charAt(0) == a.getRaspuns3().charAt(0)) {
+            System.out.println(a.getId() + " " + a.getRaspuns3());
+        }
+        if (a.getCorect().charAt(0) == a.getRaspuns4().charAt(0)) {
+            System.out.println(a.getId() + " " + a.getRaspuns3() );
         }
 
     }
