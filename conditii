@@ -1,0 +1,92 @@
+Introducere
+1.1 Scopul
+Acest document descrie Specificațiile generale privind cerințele software pentru proiectul „Cine vrea să fie milionar”, care urmează să fie implementat până la sfârșitul cursului Fundamentale Java la Tekwill.
+Documentul va servi drept bază pentru cerințe. Mai mult cerințe și detalii
+vor fi identificate, discutate și convenite într-o metodă de dezvoltare agilă.
+1.2 Descrierea generală
+Proiectul care urmează să fie implementat pe parcursul acestui curs își propune să creeze o aplicație Java care ar fi
+simula binecunoscutul joc Cine vrea să fie milionar.
+Principalele caracteristici ale aplicației sunt următoarele:
+- Joacă un joc răspunzând la întrebări și obținând o creștere a scorului de fiecare dată când utilizatorul
+alege răspunsul corect.
+- În timpul jocului, utilizatorul are 3 opțiuni de ajutor: Adresați-vă audienței, Telefonează un prieten și 50-50.
+- Încheiați jocul imediat ce utilizatorul alege un răspuns greșit.
+- Fiecare întrebare are un scor, o anumită cantitate de puncte care vor fi adăugate la scor odată ce
+jucătorul a răspuns corect la întrebare.
+- Un joc trebuie să aibă cel puțin 5 niveluri, ceea ce înseamnă că vor fi cinci întrebări de răspuns, una pe fiecare
+fiecare nivel. Întrebările care aparțin aceluiași nivel, au același punctaj.
+Din punct de vedere tehnic, aplicația va reprezenta o aplicație de consolă Java.
+Datele necesare pentru ca această aplicație să funcționeze vor fi stocate în memorie.
+
+* Sugestiile sunt binevenite.
+* Trebuie identificate detalii și cerințe suplimentare pentru aplicații.
+
+2. Codul sursă
+Codul sursă livrat trebuie să fie de înaltă calitate, ușor de întreținut, testat și documentat. Toate
+codul sursă va fi open source.
+Proiectul trebuie să fie versionat folosind Git și găzduit pe GitHub. Documentarea codului de înaltă calitate este o necesitate.
+3. Cerințe funcționale
+Mai jos este o listă de Istorii utilizator și criteriile de acceptare pe care fiecare dintre ele trebuie să le cuprindă:
+FR-1. În calitate de jucător, vreau să introduc numele meu la începutul jocului, astfel încât scorul să poată fi
+atribuită mie.
+A. La începutul jocului, jucătorul este rugat să-și înscrie numele.
+FR-2. Ca utilizator, vreau să încep un joc, astfel încât să mă pot distra.
+A. Jocul este pornit automat odată ce aplicația este pornită și funcționează.
+b. Jocul poate fi repornit dacă jucătorul dorește să facă acest lucru, după terminarea jocului anterior.
+FR-3. Ca jucător, vreau să răspund la întrebări, introducând un număr de la intervalul 1-4.
+A. Jucătorul poate răspunde la o întrebare introducând o cifră de la 1 la 4 interval, cifra referindu-se la
+indexul răspunsului.
+
+FR-4. În calitate de jucător, vreau să fie selectate la întâmplare întrebările atunci când încep un joc nou, astfel încât să nu le mai fac
+trebuie să răspundă din nou la aceleași întrebări.
+A. Fiecare întrebare are un punctaj, o anumită cantitate de puncte care ar fi adăugate la scorul jucătorului
+odată ce alege răspunsul corect. În funcție de valoarea lor, întrebările sunt „grupate” după
+nivel, astfel încât anumite întrebări pot fi afișate jucătorului când este la primul nivel, unele
+alte întrebări sunt afișate când este la al doilea nivel și așa mai departe. Când vine vorba de a selecta a
+întrebări pentru afișare către utilizator, utilizați clasa Random pentru a selecta la întâmplare o întrebare dintre acestea
+întrebări care sunt permise să fie afișate la nivelul curent.
+
+FR-5. În calitate de jucător, vreau să am opțiunea de ajutor „Cereți audienței”, pentru a putea folosi un ajutor atunci când
+având îndoieli răspunzând la o întrebare.
+A. În timpul jocului, când jucătorul trebuie să aleagă un răspuns, acesta poate introduce personajul
+„A” în schimb, care va declanșa opțiunea de ajutor „Cereți audienței”. În consecință, jucătorul va face acest lucru
+vedeți la consolă procentul distribuit prin răspunsuri, de ex. raspuns1 - 25%, raspuns2 - 17%,
+raspuns3 - 45%, raspuns4 - 13%. Deci, jucătorul poate presupune că răspunsul corect ar fi
+al treilea. Răspunsul care are un procent mai mare trebuie să fie cel corect.
+
+FR-6. În calitate de jucător, vreau să am opțiunea de ajutor „Telefon un prieten”, astfel încât să pot folosi un ajutor atunci când
+având îndoieli răspunzând la o întrebare.
+A. În timpul jocului, când jucătorul trebuie să aleagă un răspuns, acesta poate introduce personajul
+În schimb, „p”, care va declanșa opțiunea de ajutor „Telefon un prieten”. În consecință, jucătorul va face acest lucru
+vezi la consolă răspunsul potențial la întrebarea curentă. Să presupunem că această opțiune o va face
+întoarceți întotdeauna răspunsul corect.
+
+FR-7. În calitate de jucător, vreau să am opțiunea de ajutor „50/50”, pentru a putea folosi un ajutor atunci când am
+îndoieli răspunzând la o întrebare.
+A. În timpul jocului, când jucătorul trebuie să aleagă un răspuns, acesta poate introduce personajul „f”
+în schimb, ceea ce va declanșa opțiunea de ajutor „50/50”. În consecință, jucătorul va vedea la
+consolează cele 2 răspunsuri potențiale la întrebarea curentă. Una dintre ele trebuie să fie cea corectă.
+FR-8. În calitate de jucător, doresc ca scorul jocului să crească după fiecare întrebare corectă, astfel încât eu
+putea vedea progresul jocului.
+* Sugestiile sunt binevenite.
+* Trebuie identificate detalii și cerințe suplimentare pentru aplicații.
+
+A. Fiecare întrebare trebuie să aibă un punctaj, o anumită cantitate de puncte pe care jucătorulA. Fiecare întrebare trebuie să aibă un punctaj, o anumită cantitate de puncte pe care jucătorul le va primi odată ce
+i-a răspuns corect.
+
+FR-9. Ca jucător, vreau să văd scorul jocului după fiecare întrebare răspuns corect, astfel încât eu
+ar putea fi conștient de progresul meu.
+A. Scorul jocului este afișat înainte de a arăta următoarea întrebare.
+FR-10. Ca jucător, vreau să văd un mesaj de felicitare la sfârșitul jocului, dacă am reușit cu succes
+să răspund la toate întrebările, ca să mă simt fericit.
+A. Mesajul de felicitare este afișat la consolă.
+FR-11. În calitate de jucător, vreau să văd un mesaj încurajator la sfârșitul jocului, dacă nu am reușit să îl câștig,
+astfel încât să nu mă simt dezamăgit.
+A. Mesajul încurajator este afișat la consolă.
+
+4. Cerințe nefuncționale
+NFR-1. Verificați dacă este posibil să afișați textul la consolă în diferite culori, astfel încât să poată fi
+este posibil să diferențiați pașii în timpul jocului.
+
+* Sugestiile sunt binevenite.
+* Detalii suplimentare și cerințe pentru aplicații sunt
