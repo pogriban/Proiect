@@ -20,6 +20,7 @@ public class AllQuestion {
     private String answer3;
     private String answer4;
     private String correct;
+    static ArrayList<AllQuestion> list;
 
     public AllQuestion(int id, String questoin, String answer1, String answer2, String answer3, String answer4, String correct) {
         this.id = id;
@@ -31,9 +32,6 @@ public class AllQuestion {
         this.correct = correct;
     }
 
-//     public public static AllAllQuestion t1 = new AllAllQuestion(1, "Ce insecta a scurtcircuitat unul dintre primele computere și a inspirat termenul de bug\n", "A Molie ", "B Gindac de bucatarie ", "C Musca ", "D Gandac japonez", "A");//corect Molie
-//     public public static AllAllQuestion t2 = new AllAllQuestion(2, "Care dintre urmatorii oameni de stiinta nu are un element chimic care sa-i poarte numele?\n", "A Albert Einstein ", "B Niels Bohr ", "C Isaac Newton ", "D Enrico Fermi", "C");//corect Niels Bohr
-//     public public static AllAllQuestion t3 = new AllAllQuestion(3, "Care este capitala Republicii Moldova?'\n", "A Chisinau ", "B Balti ", "C Paris ", "D Tokyo", "A");//corect Chisinau
     public static AllQuestion t1 = new AllQuestion(1, "Ce insecta a scurtcircuitat unul dintre primele computere și a inspirat termenul de bug\n", "A Molie ", "B Gindac de bucatarie ", "C Musca ", "D Gandac japonez", "A");//corect Molie
     public static AllQuestion t2 = new AllQuestion(2, "Care dintre urmatorii oameni de stiinta nu are un element chimic care sa-i poarte numele?\n", "A Albert Einstein ", "B Niels Bohr ", "C Isaac Newton ", "D Enrico Fermi", "C");//corect Niels Bohr
     public static AllQuestion t3 = new AllQuestion(3, "Care este capitala Republicii Moldova?'\n", "A Chisinau ", "B Balti ", "C Paris ", "D Tokyo", "A");//corect Chisinau
@@ -130,48 +128,5 @@ public class AllQuestion {
         this.correct = corect;
     }
 
-    public ArrayList add(AllQuestion t) {
-        ArrayList<AllQuestion> allQ = new ArrayList<>();
-        allQ.add(t1);
-        allQ.add(t2);
-        allQ.add(t3);
-        allQ.add(t4);
-        allQ.add(t5);
-        allQ.add(t6);
-        allQ.add(t7);
-        allQ.add(t8);
-        allQ.add(t9);
-        allQ.add(t10);
-        allQ.add(t11);
-        allQ.add(t12);
-        allQ.add(t13);
-        allQ.add(t14);
-        allQ.add(t15);
-        allQ.add(t16);
-        allQ.add(t17);
-        allQ.add(t18);
-        allQ.add(t19);
-        allQ.add(t20);
-        allQ.add(t21);
-        allQ.add(t22);
-        allQ.add(t23);
-        allQ.add(t24);
-        allQ.add(t25);
-        allQ.add(t26);
-        allQ.add(t27);
-        allQ.add(t28);
-        allQ.add(t29);
-        allQ.add(t30);
-        allQ.add(t31);
-        allQ.add(t32);
-        allQ.add(t33);
-        allQ.add(t34);
-        allQ.add(t35);
-        allQ.add(t36);
-        allQ.add(t37);
-        allQ.add(t38);
-        allQ.add(t39);
-        return allQ;
-    }
-
+    
 }
