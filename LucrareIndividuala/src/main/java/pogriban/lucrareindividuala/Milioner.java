@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import pogriban.lucrareindividuala.TotalIntrebari;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -14,8 +15,11 @@ import pogriban.lucrareindividuala.Raspuns;
  *
  * @author ThinkPad
  */
-public class Milioner {
-
+public class Milioner extends TotalIntrebari{
+    public Milioner(int id, String questoin, String answer1, String answer2, String answer3, String answer4, String correct) {
+        super(id, questoin, answer1, answer2, answer3, answer4, correct);
+    }
+static int r1, r2, r3, r4, max1=0;
     static int count = 0;
     static int nrIntr = 1;
     static Random random = new Random();
@@ -62,7 +66,9 @@ public class Milioner {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
-
+        System.out.println();
+        //TotalIntrebari tot;
+        System.out.println(t1.getAnswer1());
         int y = random.nextInt(6);
         Intrebari p;
         System.out.println();
@@ -116,14 +122,7 @@ public class Milioner {
             char yesOrNot = sc.next().charAt(0);
             if (yesOrNot == 'Y' || yesOrNot == 'y') {
                 if (afisIntrebare(p)) ;
-                System.out.println("Pentru ajuor alegeti: \n"
-        + "1 - 50/50 \n"
-        + "2 - ajutorul spectatorilor \n"
-        + "3 - Suna un prieten \n");
-        char intrCorec = sc.next().charAt(0);
-        if (intrCorec=='1') a50_50(p);
-        if (intrCorec=='2') help(p);
-        if (intrCorec=='3') a50_50(p);else {
+                else {
                     System.out.println("Imi pare rau! "+name+ " aici punem punct cu " + count+" $");
                     break;
                 }
@@ -167,7 +166,7 @@ public class Milioner {
     public static Intrebari randIntr(ArrayList<Intrebari> arL, int rand1, int rand2) {
         for (Intrebari elem : arL) {
             if (elem.getId() == (rand1 + rand2) / 2) {
-                System.out.println("rand= " + (rand1 + rand2) / 2);
+                
                 return elem;
             }
 
@@ -177,6 +176,21 @@ public class Milioner {
     }
 
     public static void a50_50(Intrebari a) {
+        do{
+  
+   r1=((int)( Math.random()*100) );
+  r2=((int)(Math.random()*100)) ;
+  r3=((int)(Math.random()*100)) ;
+r4=(int)(Math.random()*10) ;
+}
+   while(  (r1+r2+r3+r4)!=100) ;
+   if (r1>r2) max1=r1;
+   else max1=r2;
+   if(max1>r3) max1=max1;
+   else max1=r3;
+   if(max1>r4) max1=max1;
+   else max1 =r4;
+
 
         //System.out.println(a.getId() + " "  + (a.getRasCorect()) + a.getRaspuns2() + a.getRaspuns3() + a.getRaspuns4());
         //char intrCorec = sc.next().charAt(0);
@@ -196,11 +210,8 @@ public class Milioner {
     }
 
     public static void help(Intrebari a) {
-
-        int f = 100 - random.nextInt(45);
-        int f1 = f - random.nextInt(34);
-        int f2 = f1 - random.nextInt(21);
-        int f3 = f2 - random.nextInt(11);
+        
+        
         //System.out.println(a.getId() + " "  + (a.getRasCorect()) + a.getRaspuns2() + a.getRaspuns3() + a.getRaspuns4());
         //char intrCorec = sc.next().charAt(0);
         if (a.getCorect().charAt(0) == a.getRasCorect().charAt(0)) {
@@ -234,4 +245,6 @@ public class Milioner {
         }
 
     }
+
+    
 }
